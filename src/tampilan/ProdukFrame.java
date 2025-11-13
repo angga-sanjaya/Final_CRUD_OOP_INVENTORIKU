@@ -37,6 +37,7 @@ public class ProdukFrame extends javax.swing.JFrame {
         mnKeluar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(960, 600));
 
         lpDasar.setBackground(new java.awt.Color(255, 255, 0));
         lpDasar.setOpaque(true);

@@ -8,12 +8,12 @@ package tampilan;
  *
  * @author ACER
  */
-public class KategoriFrame extends javax.swing.JFrame {
+public class PenggunaFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form KategoriFrame
+     * Creates new form PenggunaFrame
      */
-    public KategoriFrame() {
+    public PenggunaFrame() {
         initComponents();
     }
 
@@ -37,7 +37,6 @@ public class KategoriFrame extends javax.swing.JFrame {
         mnKeluar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(960, 600));
 
         lpDasar.setBackground(new java.awt.Color(255, 255, 0));
         lpDasar.setOpaque(true);
@@ -46,7 +45,7 @@ public class KategoriFrame extends javax.swing.JFrame {
         lblBackground.setBackground(new java.awt.Color(255, 0, 51));
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikon/_Background polos.png"))); // NOI18N
 
-        lpDasar.setLayer(lblBackground, javax.swing.JLayeredPane.POPUP_LAYER);
+        lpDasar.setLayer(lblBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout lpDasarLayout = new javax.swing.GroupLayout(lpDasar);
         lpDasar.setLayout(lpDasarLayout);
@@ -120,20 +119,20 @@ public class KategoriFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(KategoriFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PenggunaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(KategoriFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PenggunaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(KategoriFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PenggunaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(KategoriFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PenggunaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KategoriFrame().setVisible(true);
+                new PenggunaFrame().setVisible(true);
             }
         });
     }
