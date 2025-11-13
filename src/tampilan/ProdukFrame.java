@@ -4,6 +4,8 @@
  */
 package tampilan;
 
+import java.awt.Font;
+
 /**
  *
  * @author ACER
@@ -28,6 +30,29 @@ public class ProdukFrame extends javax.swing.JFrame {
 
         lpDasar = new javax.swing.JLayeredPane();
         lblBackground = new javax.swing.JLabel();
+        pnlKonten = new javax.swing.JPanel();
+        pnlForm = new javax.swing.JPanel();
+        lblJudulForm = new javax.swing.JLabel();
+        lblIdProduk = new javax.swing.JLabel();
+        txtIdProduk = new javax.swing.JTextField();
+        lblNamaProduk = new javax.swing.JLabel();
+        txtNamaProduk = new javax.swing.JTextField();
+        lblKategoriProduk = new javax.swing.JLabel();
+        cmbKategori = new javax.swing.JComboBox<>();
+        lblStatusProduk = new javax.swing.JLabel();
+        cmbStatus = new javax.swing.JComboBox<>();
+        lblDeskripsiProduk = new javax.swing.JLabel();
+        scrDeskripsiProduk = new javax.swing.JScrollPane();
+        txtDeskripsiProduk = new javax.swing.JTextArea();
+        lblHargaProduk = new javax.swing.JLabel();
+        txtHargaProduk = new javax.swing.JTextField();
+        pnlAksi = new javax.swing.JPanel();
+        btnTambah = new javax.swing.JButton();
+        btnUbah = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
+        btnBersihkan = new javax.swing.JButton();
+        scrTabelProduk = new javax.swing.JScrollPane();
+        tblProduk = new javax.swing.JTable();
         mnBarUtama = new javax.swing.JMenuBar();
         mnLogo = new javax.swing.JMenu();
         mnPengguna = new javax.swing.JMenu();
@@ -46,19 +71,206 @@ public class ProdukFrame extends javax.swing.JFrame {
         lblBackground.setBackground(new java.awt.Color(255, 0, 51));
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikon/_Background polos.png"))); // NOI18N
 
+        pnlKonten.setOpaque(false);
+
+        pnlForm.setBackground(new java.awt.Color(240, 240, 240));
+        pnlForm.setBorder(javax.swing.BorderFactory.createEmptyBorder(24, 24, 24, 24));
+
+        lblJudulForm.setFont(lblJudulForm.getFont().deriveFont(Font.BOLD, 24f));
+        lblJudulForm.setForeground(new java.awt.Color(51, 51, 51));
+        lblJudulForm.setText("PRODUCT");
+
+        lblIdProduk.setFont(lblIdProduk.getFont().deriveFont(Font.BOLD));
+        lblIdProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblIdProduk.setText("Id Produk");
+
+        txtIdProduk.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 8, 6, 8));
+
+        lblNamaProduk.setFont(lblNamaProduk.getFont().deriveFont(Font.BOLD));
+        lblNamaProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblNamaProduk.setText("Nama Produk");
+
+        txtNamaProduk.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 8, 6, 8));
+
+        lblKategoriProduk.setFont(lblKategoriProduk.getFont().deriveFont(Font.BOLD));
+        lblKategoriProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblKategoriProduk.setText("Kategori Produk");
+
+        cmbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"-- Pilih Kategori --"}));
+
+        lblStatusProduk.setFont(lblStatusProduk.getFont().deriveFont(Font.BOLD));
+        lblStatusProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblStatusProduk.setText("Status");
+
+        cmbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Aktif", "Tidak Aktif"}));
+
+        lblDeskripsiProduk.setFont(lblDeskripsiProduk.getFont().deriveFont(Font.BOLD));
+        lblDeskripsiProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblDeskripsiProduk.setText("Deskripsi Produk");
+
+        txtDeskripsiProduk.setColumns(20);
+        txtDeskripsiProduk.setRows(5);
+        txtDeskripsiProduk.setLineWrap(true);
+        txtDeskripsiProduk.setWrapStyleWord(true);
+        txtDeskripsiProduk.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 8, 6, 8));
+        scrDeskripsiProduk.setViewportView(txtDeskripsiProduk);
+
+        lblHargaProduk.setFont(lblHargaProduk.getFont().deriveFont(Font.BOLD));
+        lblHargaProduk.setForeground(new java.awt.Color(51, 51, 51));
+        lblHargaProduk.setText("Harga Produk");
+
+        txtHargaProduk.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 8, 6, 8));
+
+        pnlAksi.setOpaque(false);
+        pnlAksi.setLayout(new java.awt.GridLayout(1, 0, 12, 0));
+
+        btnTambah.setBackground(new java.awt.Color(255, 102, 0));
+        btnTambah.setForeground(new java.awt.Color(255, 255, 255));
+        btnTambah.setText("Tambah");
+        btnTambah.setFocusPainted(false);
+        btnTambah.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        btnTambah.setOpaque(true);
+        pnlAksi.add(btnTambah);
+
+        btnUbah.setBackground(new java.awt.Color(51, 102, 255));
+        btnUbah.setForeground(new java.awt.Color(255, 255, 255));
+        btnUbah.setText("Ubah");
+        btnUbah.setFocusPainted(false);
+        btnUbah.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        btnUbah.setOpaque(true);
+        pnlAksi.add(btnUbah);
+
+        btnHapus.setBackground(new java.awt.Color(204, 0, 0));
+        btnHapus.setForeground(new java.awt.Color(255, 255, 255));
+        btnHapus.setText("Hapus");
+        btnHapus.setFocusPainted(false);
+        btnHapus.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        btnHapus.setOpaque(true);
+        pnlAksi.add(btnHapus);
+
+        btnBersihkan.setBackground(new java.awt.Color(102, 102, 102));
+        btnBersihkan.setForeground(new java.awt.Color(255, 255, 255));
+        btnBersihkan.setText("Bersihkan");
+        btnBersihkan.setFocusPainted(false);
+        btnBersihkan.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 12, 10, 12));
+        btnBersihkan.setOpaque(true);
+        pnlAksi.add(btnBersihkan);
+
+        javax.swing.GroupLayout pnlFormLayout = new javax.swing.GroupLayout(pnlForm);
+        pnlForm.setLayout(pnlFormLayout);
+        pnlFormLayout.setHorizontalGroup(
+            pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblJudulForm)
+            .addComponent(lblIdProduk)
+            .addComponent(txtIdProduk)
+            .addComponent(lblNamaProduk)
+            .addComponent(txtNamaProduk)
+            .addComponent(lblKategoriProduk)
+            .addComponent(cmbKategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblStatusProduk)
+            .addComponent(cmbStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblDeskripsiProduk)
+            .addComponent(scrDeskripsiProduk)
+            .addComponent(lblHargaProduk)
+            .addComponent(txtHargaProduk)
+            .addComponent(pnlAksi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlFormLayout.setVerticalGroup(
+            pnlFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFormLayout.createSequentialGroup()
+                .addComponent(lblJudulForm)
+                .addGap(24, 24, 24)
+                .addComponent(lblIdProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtIdProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblNamaProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNamaProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblKategoriProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblStatusProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblDeskripsiProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrDeskripsiProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblHargaProduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtHargaProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(pnlAksi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        scrTabelProduk.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+
+        tblProduk.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nama Produk", "Kategori", "Status", "Harga"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProduk.setRowHeight(28);
+        tblProduk.setSelectionBackground(new java.awt.Color(255, 204, 102));
+        tblProduk.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tblProduk.setShowGrid(false);
+        tblProduk.setFillsViewportHeight(true);
+        scrTabelProduk.setViewportView(tblProduk);
+
+        javax.swing.GroupLayout pnlKontenLayout = new javax.swing.GroupLayout(pnlKonten);
+        pnlKonten.setLayout(pnlKontenLayout);
+        pnlKontenLayout.setHorizontalGroup(
+            pnlKontenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKontenLayout.createSequentialGroup()
+                .addComponent(pnlForm, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 24, Short.MAX_VALUE)
+                .addComponent(scrTabelProduk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlKontenLayout.setVerticalGroup(
+            pnlKontenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(scrTabelProduk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         lpDasar.setLayer(lblBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        lpDasar.setLayer(pnlKonten, javax.swing.JLayeredPane.PALETTE_LAYER);
 
         javax.swing.GroupLayout lpDasarLayout = new javax.swing.GroupLayout(lpDasar);
         lpDasar.setLayout(lpDasarLayout);
         lpDasarLayout.setHorizontalGroup(
             lpDasarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblBackground)
+            .addGroup(lpDasarLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(pnlKonten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         lpDasarLayout.setVerticalGroup(
             lpDasarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lpDasarLayout.createSequentialGroup()
-                .addComponent(lblBackground)
-                .addGap(440, 440, 440))
+            .addComponent(lblBackground)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lpDasarLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(pnlKonten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         mnBarUtama.setBackground(new java.awt.Color(255, 255, 255));
@@ -139,7 +351,20 @@ public class ProdukFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBersihkan;
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnTambah;
+    private javax.swing.JButton btnUbah;
+    private javax.swing.JComboBox<String> cmbKategori;
+    private javax.swing.JComboBox<String> cmbStatus;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblDeskripsiProduk;
+    private javax.swing.JLabel lblHargaProduk;
+    private javax.swing.JLabel lblIdProduk;
+    private javax.swing.JLabel lblJudulForm;
+    private javax.swing.JLabel lblKategoriProduk;
+    private javax.swing.JLabel lblNamaProduk;
+    private javax.swing.JLabel lblStatusProduk;
     private javax.swing.JLayeredPane lpDasar;
     private javax.swing.JMenuBar mnBarUtama;
     private javax.swing.JMenu mnKategori;
@@ -148,5 +373,15 @@ public class ProdukFrame extends javax.swing.JFrame {
     private javax.swing.JMenu mnLogo;
     private javax.swing.JMenu mnPengguna;
     private javax.swing.JMenu mnProduk;
+    private javax.swing.JPanel pnlAksi;
+    private javax.swing.JPanel pnlForm;
+    private javax.swing.JPanel pnlKonten;
+    private javax.swing.JScrollPane scrDeskripsiProduk;
+    private javax.swing.JScrollPane scrTabelProduk;
+    private javax.swing.JTable tblProduk;
+    private javax.swing.JTextArea txtDeskripsiProduk;
+    private javax.swing.JTextField txtHargaProduk;
+    private javax.swing.JTextField txtIdProduk;
+    private javax.swing.JTextField txtNamaProduk;
     // End of variables declaration//GEN-END:variables
 }
